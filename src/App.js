@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import axios from "axios";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const [data, setData] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
+
+  const fetchData = async () => {
+    const response = await axios.get("http://localhost:3100/");
+    // console.log(response.data);
+    setData(response.data);
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  return isLoading ? (
+    <span>En cours de chargement... </span>
+  ) : (
+    <h2>{data.restaurant.name}</h2>
   );
 }
 
