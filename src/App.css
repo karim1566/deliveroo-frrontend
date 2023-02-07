@@ -1,0 +1,154 @@
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+h2 {
+  font-size: 24px;
+  padding-top: 20px;
+  font-weight: bold;
+}
+h4 {
+  font-size: 18px;
+}
+p {
+  font-size: 14px;
+  color: #868a8a;
+}
+main {
+  background-color: #f2f5f5;
+  display: flex;
+}
+h3 {
+  color: #868a8a;
+  font-size: 17px;
+}
+/* ---------------------------------------------------
+-----------------------------------------------------
+HEADER */
+
+.logo {
+  width: 155px;
+}
+
+.topHeader {
+  width: 1200px;
+  margin: 0 auto;
+  height: 59px;
+  display: flex;
+}
+/* --------------------------------------------
+
+-------- BAS HEADER*/
+
+.bottomHeader {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 257px;
+  border-top: 1px solid #e8ebeb;
+}
+.bottomimg {
+  width: 350px;
+  height: 200px;
+  border-radius: 5px;
+}
+.bottomleft {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  gap: 35px;
+}
+.bottomP {
+  font-size: 19px;
+  color: #868a8a;
+}
+/* --------------------------------------------------
+----------------------------------------------------
+MAIN */
+span {
+  font-weight: bold;
+  color: orange;
+}
+.picture {
+  width: 130px;
+  height: 130px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+.blocB {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+.menusec {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.blocG {
+  width: 380px;
+  height: 160px;
+  display: flex;
+
+  background-color: white;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.blocP {
+  display: flex;
+  flex-direction: column;
+}
+.sect :hover {
+  cursor: pointer;
+}
+
+.sect {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.panier {
+  border-radius: 5px;
+  background-color: white;
+  /* max-height: 200px; */
+  padding: 10px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button {
+  font-size: 16px;
+  width: 330px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #bac3c3;
+  border: none;
+  color: #8e9d9e;
+}
+.panierP {
+  font-size: 16px;
+  margin: 50px 0;
+}
+.panierv {
+  font-size: 16px;
+  width: 330px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #02cdbd;
+  border: none;
+  color: white;
+}
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
