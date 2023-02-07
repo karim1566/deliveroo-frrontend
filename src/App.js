@@ -104,7 +104,7 @@ function App() {
                   newcounter[index] = newcounter[index] - 1;
                   setCounter(newcounter);
                 };
-
+                // cd
                 return (
                   <article key={index}>
                     <div className="add">
