@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import logo from "./assets/img/logo-teal.svg";
-import touf from "./assets/img/touf.JPG";
 
 function App() {
   const [data, setData] = useState({});
@@ -45,7 +44,6 @@ function App() {
         <div className="topHeader">
           <img className="logo" src={logo} alt=""></img>
         </div>
-        <img src={touf} alt=""></img>
         <section className="bottomHeader">
           <div className="bottomleft">
             <h1>{data.restaurant.name}</h1>
