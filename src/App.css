@@ -152,3 +152,27 @@ span {
   align-items: center;
   justify-content: space-between;
 }
+.disp {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
+  margin: 20px;
+}
+.rond {
+  border-radius: 50%;
+  border: 2px solid aqua;
+  background-color: white;
+  margin: 5px;
+}
+.frais {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.sous {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid lightgrey;
+}

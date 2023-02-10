@@ -7,7 +7,6 @@ function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [counter, setCounter] = useState([]);
-  const [menu, setMenu] = useState();
 
   const fetchData = async () => {
     const response = await axios.get(
@@ -22,20 +21,21 @@ function App() {
     fetchData();
   }, []);
 
-  const handleclick = () => {
-    if (counter < 1) {
-      const newcounter = [...counter];
-      newcounter.push(1);
-      setCounter(newcounter);
-    } else if (counter >= 1) {
-      const newcounter = [...counter];
-      newcounter.map((item, index) => {
-        newcounter[index] = newcounter[index] + 1;
-        setCounter(newcounter);
-      });
-    }
-  };
+  const handleclick = (element) => {
+    const newpanier = [...counter];
+    const newid = newpanier.find((elem) => elem.id === element.id);
+    newid.id
+      ? newpanier.counter++
+      : newpanier.push({
+          id: element.id,
+          title: element.title,
+          price: element.price,
+          counter: 1,
+        });
 
+    setCounter(newpanier);
+  };
+  const frais = 2.5;
   return isLoading ? (
     <span>En cours de chargement... </span>
   ) : (
@@ -65,7 +65,12 @@ function App() {
                     {element.meals.map((element, index) => {
                       return (
                         <div key={element.id} className="blocG">
-                          <div className="blocP" onClick={handleclick}>
+                          <div
+                            className="blocP"
+                            onClick={() => {
+                              handleclick(element);
+                            }}
+                          >
                             <h4>{element.title}</h4>
                             <p>{element.description}</p>
                             <h3>
@@ -94,33 +99,53 @@ function App() {
             </button>
             <div>
               {counter.map((element, index) => {
+                console.log(counter);
                 const operation = () => {
                   const newcounter = [...counter];
-                  newcounter[index] = newcounter[index] + 1;
+                  newcounter[index].counter = newcounter[index].counter + 1;
                   setCounter(newcounter);
                 };
                 const soustraction = () => {
                   const newcounter = [...counter];
-                  newcounter[index] = newcounter[index] - 1;
+                  newcounter[index].counter = newcounter[index].counter - 1;
                   setCounter(newcounter);
                 };
                 // cd
                 return (
                   <article key={index}>
-                    <div className="add">
-                      <button onClick={soustraction}>-</button>
-                      <p>{element}</p>
-                      <button onClick={operation}>+</button>
+                    <div className="disp">
+                      <div className="add">
+                        <button className="rond" onClick={soustraction}>
+                          -
+                        </button>
+                        <p>{element.counter}</p>
+                        <button className="rond" onClick={operation}>
+                          +
+                        </button>
+                      </div>
+                      <h3>{element.title}</h3>
+                      <h3>{element.counter * element.price}</h3>
                     </div>
                   </article>
                 );
               })}
+
+              <div className="sous">
+                <p>{counter[0] ? "Sous-total" : ""}</p>
+                <p>{counter[0] ? "total" : ""}</p>
+              </div>
+              <div className="frais">
+                <p>{counter[0] ? "frais de livraison" : ""}</p>
+                <p>{counter[0] ? frais : ""} € </p>
+              </div>
             </div>
-            <p className="panierP">Votre panier est vide</p>
+            <p className="panierP">
+              {!counter[0] ? "Votre panier est vide" : ""}
+            </p>
           </div>
         </div>
       </main>
-      <footer>{counter}</footer>
+      <footer></footer>
     </>
   );
 }
