@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import logo from "./assets/img/logo-teal.svg";
-import cafard from "./assets/img/cafard.JPG";
 function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -44,7 +43,6 @@ function App() {
         <div className="topHeader">
           <img className="logo" src={logo} alt=""></img>
         </div>
-        <img className="cafard" src={cafard} alt=""></img>
 
         <section className="bottomHeader">
           <div className="bottomleft">
