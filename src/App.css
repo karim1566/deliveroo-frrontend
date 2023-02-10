@@ -176,3 +176,7 @@ span {
   justify-content: space-between;
   border-top: 1px solid lightgrey;
 }
+
+.cafard {
+  height: 300px;
+}
